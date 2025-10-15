@@ -105,12 +105,6 @@ public class Zoo {
     }
 
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            System.out.println(" Le nom du zoo ne peut pas être vide. Nom par défaut appliqué.");
-            this.name = "Zoo_SansNom";
-        } else {
-            this.name = name;
-        }
         this.name = name;
     }
 }

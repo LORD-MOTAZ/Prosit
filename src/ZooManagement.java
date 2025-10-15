@@ -1,45 +1,25 @@
-import java.util.Scanner;
-
-/* public class ZooManagement {
-    static int nbrCages = 20;
-    static String zooName = "my zoo";
-
-    public static void main(String[] args) {
-        ZooManagement zoo = new ZooManagement();
-        System.out.println( zooName + " comporte " + nbrCages + " cages");
-    }
-} */
-
 public class ZooManagement {
-    static int nbrCages ;
-    static String zooName ;
-
     public static void main(String[] args) {
+        Animal lion = new Animal("Félidés", "Lion", 5, true);
+        Animal chat = new Animal("Félidés", "Chat", 3, true);
+        Animal chien = new Animal("Canidés", "Chien", 4, true);
+        Zoo myZoo = new Zoo("Safari Park", "Tunis", 25);
 
-        Scanner sc = new Scanner(System.in);
-        ZooManagement zoo = new ZooManagement();
+        System.out.println("-------- Résultats --------");
 
-        do {
-            System.out.println("Saisir le nombre de cages : ");
+        System.out.println("Animal -> Nom: " + lion.getName() +
+                ", Famille: " + lion.getFamily() +
+                ", Âge: " + lion.getAge() +
+                ", Mammifère: " + lion.isMammal());
 
-            while (!sc.hasNextInt()) {
-                System.out.println("Resaisir le nombre de cages : ");
-                sc.nextLine();
-            } nbrCages = sc.nextInt();
-        }while (nbrCages <= 0);
+        System.out.println("Zoo -> Nom: " + myZoo.getName() +
+                ", Ville: " + myZoo.getCity() +
+                ", Nombre de cages: " + myZoo.getNbrCages());
 
-        do {
-            System.out.println("Saisir le nom du zoo : ");
-            zooName = sc.nextLine().trim();
+        System.out.println(myZoo);
+        System.out.println(myZoo.toString());
 
-            if (zooName.isEmpty()) {
-                System.out.println("Le nom du zoo ne peut pas être vide. Veuillez réessayer.");
-            }
-
-        } while (zooName.isEmpty());
-
-
-        sc.close();
-        System.out.println( zooName + " comporte " + nbrCages + " cages");
+        System.out.println(chat);
+        System.out.println(chien.toString());
     }
 }
